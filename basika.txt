@@ -1,0 +1,71 @@
+int l;using System;
+namespace Vscode_P
+{
+    class Program
+    {
+         
+        static void Main(string[] args)
+        {
+            int l;
+            int a,b,d=0;
+            int c;
+            string f;
+            Console.Write("長度");
+            l=int.Parse(Console.ReadLine());
+            int[][] num =new int[l+1][];
+            for(int i=0;i<=l;i++){
+                num[i]=new int[i+1];
+                }
+            num[0][0]=1;
+            num[1][0]=1;
+            num[1][1]=1;
+            a=num[1][0];
+            b=num[1][1];
+            num[2][1]=2;
+            while(l-1>=d){
+                Console.Write(" ");
+            d++;
+            }Console.WriteLine(string.Format("{0,-1}",1));
+            d=0;
+            while(l-1>d){
+                Console.Write(" ");
+            d++;
+            }Console.Write(string.Format("{0,-3}",1));
+            Console.WriteLine(string.Format("{0,-3}",1));
+            d=0;
+            for(int i=2;i<l;i++){
+                    num[i][0]=1;
+                    num[i][i]=1;
+                    while((l-i)>d){
+                        Console.Write(" ");
+                        d++;
+                    }
+                    d=0;
+                for(int j=0;j<i;j++){
+                    a=num[i][j];
+                    b=num[i][j+1];
+                    if(j+1<i){
+                        num[i+1][j+1]=a+b;
+                    }
+                    else if(j+1==i){
+                        b=1;
+                        a=num[i][j];
+                        num[i+1][j+1]=a+b;
+                    }
+                    c=num[i][j];
+                    f=string.Format("{0,-3}",c);
+                    Console.Write(f);  
+
+
+                }       
+                c=num[i][i];
+                f=string.Format("{0,-3}",c);
+                Console.Write(f);
+                Console.WriteLine();
+            }    
+            Console.ReadKey();
+            
+
+        }
+    }
+}
